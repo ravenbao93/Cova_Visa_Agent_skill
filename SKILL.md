@@ -6,7 +6,7 @@
 - **Version**: 1.0.0
 - **Language**: English
 - **Author**: AI Visa Copilot Project
-- **Repository**: https://github.com/your-username/cova-visa-agent
+- **Repository**: https://github.com/ravenbao93/Cova_Visa_Agent_skill
 - **License**: MIT
 
 ## Triggers
@@ -17,7 +17,7 @@ Use this skill when the user:
 - Needs help filling out the COVA (Chinese Visa Online Application) form at cova.mfa.gov.cn
 - Asks about Chinese visa requirements, documents, or procedures
 - Wants to schedule a visa appointment
-- Mentions "Chinese visa", "China visa", "COVA", "ǩ֤", or "Chinese visa application"
+- Mentions "Chinese visa", "China visa", "COVA", "??", or "Chinese visa application"
 - Wants to practice visa interview questions
 
 ## Overview

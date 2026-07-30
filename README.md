@@ -22,7 +22,11 @@ COVA Visa Agent is a Claude Code Agent Skill that transforms the complex Chinese
 
 ### Prerequisites
 
-- [Claude Code](https://claude.ai/code) installed
+- An AI coding agent installed:
+  - [Cursor](https://cursor.com) (recommended)
+  - [Claude Code](https://claude.ai/code)
+  - [VS Code with Copilot](https://code.visualstudio.com/)
+  - Other AI agents with skill loading capability
 - Access to [cova.mfa.gov.cn](https://cova.mfa.gov.cn)
 - A valid passport (6+ months validity)
 - Chrome or Edge browser recommended
@@ -30,11 +34,21 @@ COVA Visa Agent is a Claude Code Agent Skill that transforms the complex Chinese
 ### Installation
 
 1. Download or clone this repository
-2. Place the `cova-visa-agent` folder into your Claude Code skills directory:
-   - **macOS**: `~/.claude/skills/`
-   - **Windows**: `%USERPROFILE%\.claude\skills\`
-   - **Linux**: `~/.claude/skills/`
-3. Restart Claude Code
+2. Place the `cova-visa-agent` folder into your AI agent's skills directory:
+
+   | AI Agent | Skills Directory |
+   |----------|-----------------|
+   | **Cursor** | `~/.cursor/skills/` |
+   | **Claude Code** | `~/.claude/skills/` |
+   | **VS Code + Copilot** | Not supported (no skill system) |
+   | **Other** | Check your agent's documentation |
+
+   Example for Cursor:
+   ```bash
+   cp -r cova-visa-agent ~/.cursor/skills/
+   ```
+
+3. Restart your AI agent
 
 ### Usage
 
@@ -51,22 +65,22 @@ Or simply describe your need:
 ## How It Works
 
 ```
-©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
-©¦                                                                 ©¦
-©¦   ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´   ©¦
-©¦   ©¦  1. Interview ©¦ ¡ú ©¦ 2. Validation ©¦ ¡ú ©¦ 3. Checklist ©¦   ©¦
-©¦   ©¦  Conversational©¦    ©¦  Smart Checks ©¦    ©¦  Personalized©¦   ©¦
-©¦   ©¦  Q&A Session  ©¦    ©¦  Risk Flags  ©¦    ©¦  Document List©¦   ©¦
-©¦   ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼   ©¦
-©¦                                                    ©¦            ©¦
-©¦                                                    ¡ý            ©¦
-©¦   ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´    ©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´   ©¦
-©¦   ©¦  6. Guidance ©¦ ¡û ©¦  5. Document ©¦ ¡û ©¦ 4. Form Fill ©¦   ©¦
-©¦   ©¦  Submit Help ©¦    ©¦   Uploads    ©¦    ©¦  Step-by-Step©¦   ©¦
-©¦   ©¦              ©¦    ©¦  Photo Tips  ©¦    ©¦  Your Browser©¦   ©¦
-©¦   ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼    ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼   ©¦
-©¦                                                                 ©¦
-©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+???????????????????????????????????????????????????????????????????????????????
+?                                                                             ?
+?   ???????????????????    ???????????????????    ???????????????????        ?
+?   ?  1. Interview   ? -> ? 2. Validation  ? -> ? 3. Checklist   ?        ?
+?   ?  Conversational  ?    ?  Smart Checks  ?    ?  Personalized  ?        ?
+?   ?  Q&A Session    ?    ?  Risk Flags    ?    ?  Document List ?        ?
+?   ???????????????????    ???????????????????    ???????????????????        ?
+?                                                                           ?
+?                                                                           ?
+?   ???????????????????    ???????????????????    ???????????????????        ?
+?   ?  6. Guidance    ? <- ? 5. Document    ? <- ? 4. Form Fill   ?        ?
+?   ?  Submit Help    ?    ?  Uploads       ?    ?  Step-by-Step  ?        ?
+?   ?                 ?    ?  Photo Tips    ?    ?  Your Browser  ?        ?
+?   ???????????????????    ???????????????????    ???????????????????        ?
+?                                                                           ?
+???????????????????????????????????????????????????????????????????????????????
 ```
 
 ## Supported Visa Types
@@ -104,13 +118,13 @@ The agent asks one question at a time, covering:
 ```
 Your passport expires on [DATE]
 You plan to exit China on [DATE]
-¡ú Must be valid 6+ months beyond exit date
+-> Must be valid 6+ months beyond exit date
 ```
 
 **90-Day Rule Enforcement:**
 ```
 COVA requires entry date within 90 days of application
-¡ú Warning if planned entry is too far in the future
+-> Warning if planned entry is too far in the future
 ```
 
 ### 3. Personalized Document Checklist
@@ -119,7 +133,7 @@ Generated based on your specific visa type and situation:
 
 **L Visa Example:**
 - [ ] Passport (6+ months validity, 2 blank pages)
-- [ ] Photo (354¡Á472px, white background, ¡Ý40KB)
+- [ ] Photo (354×472px, white background, ?40KB)
 - [ ] US residence proof (driver's license, utility bill)
 - [ ] Previous Chinese visa page (if applicable)
 
@@ -204,7 +218,7 @@ Agent: "Based on your L visa application, here's your checklist:
 
         REQUIRED FOR ONLINE SUBMISSION:
         - [ ] Passport info page photo
-        - [ ] Photo (354¡Á472px, white background, ¡Ý40KB)
+        - [ ] Photo (354×472px, white background, ?40KB)
         - [ ] US residence proof
         
         REQUIRED AT CONSULATE:
