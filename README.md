@@ -3,7 +3,8 @@
 > Smart Chinese visa assistant - from trip purpose to approved application
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.1.0-green.svg)](#)
+[![Version](https://img.shields.io/badge/version-2.2.0-green.svg)](#)
+[![Languages](https://img.shields.io/badge/languages-EN%20%7C%20ES%20%7C%20ZH-red.svg)]()
 
 ## Overview
 
@@ -16,6 +17,7 @@ COVA Visa Agent starts from YOUR trip purpose and recommends the fastest path - 
 - **Skip unnecessary**: L visa? No invitation letter needed
 - **YES/NO only**: Quick questions, no open-ended typing
 - **Smart recommendations**: Best visa type based on your stay duration
+- **Multilingual**: Responds in English, Spanish, or Chinese
 
 ---
 
@@ -37,6 +39,8 @@ COVA Visa Agent starts from YOUR trip purpose and recommends the fastest path - 
 ### Usage
 
 Say: "I want to apply for a Chinese visa"
+Say: "Quiero solicitar una visa china"
+??"????????"
 
 ---
 
@@ -61,16 +65,16 @@ Tell us WHY you're going:
 
 | Duration | Country | Option |
 |----------|---------|--------|
-| ¡Ü 15 days | 54 countries | 144-hour Transit Visa-Free |
+| ? 15 days | 54 countries | 144-hour Transit Visa-Free |
 | Any | US/Canada/Japan... | 30-day Tourist Visa (L) |
 | Business | China | M Visa |
 
 ### Step 3: Smart Form
 
 Only shows sections YOU need:
-- L Visa ¡ú No invitation letter section
-- Transit Visa-Free ¡ú No COVA form needed!
-- Already answered ¡ú Skip that question
+- L Visa ? No invitation letter section
+- Transit Visa-Free ? No COVA form needed!
+- Already answered ? Skip that question
 
 ---
 
@@ -84,7 +88,7 @@ Only shows sections YOU need:
 |-------------|---------|
 | Nationality | From 54 eligible countries (US ?) |
 | Transit | Must be through designated city |
-| Duration | ¡Ü 144 hours (6 days) |
+| Duration | ? 144 hours (6 days) |
 | Destination | Must be different country |
 
 **Eligible cities:** Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Xi'an, Chongqing...

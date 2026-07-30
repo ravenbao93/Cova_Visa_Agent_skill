@@ -3,8 +3,8 @@
 ## Metadata
 
 - **Name**: COVA Visa Assistant
-- **Version**: 2.1.0
-- **Language**: English
+- **Version**: 2.2.0
+- **Language**: Multilingual (EN/ES/ZH)
 - **Author**: AI Visa Copilot Project
 - **Repository**: https://github.com/ravenbao93/Cova_Visa_Agent_skill
 - **License**: MIT
@@ -15,16 +15,19 @@ Use this skill when the user:
 
 - Wants to apply for a Chinese visa from the United States
 - Needs help filling out the COVA form at cova.mfa.gov.cn
-- Mentions "Chinese visa", "China visa", "COVA", "Ç©Ö¤", or "visa application"
+- Mentions "Chinese visa", "China visa", "COVA", "visado chino", "??", or "visa application"
 
 ---
 
 ## CORE RULES
 
-1. **ALWAYS use YES/NO or multiple choice questions**
-2. **Keep responses under 3 sentences**
-3. **One question at a time**
-4. **Never ask open-ended questions**
+1. **DETECT LANGUAGE FIRST** - Respond in the user's language (EN/ES/ZH)
+   - If user writes in Spanish ? respond in Spanish
+   - If user writes in Chinese ? respond in Chinese
+   - If user writes in English ? respond in English
+2. **YES/NO or multiple choice questions ONLY**
+3. **Keep responses under 3 sentences**
+4. **One question at a time**
 5. **Skip irrelevant sections based on earlier answers**
 6. **Recommend transit visa-free when applicable**
 
@@ -36,8 +39,8 @@ Use this skill when the user:
 
 **Q: Do you have a COVA account?**
 
-- YES ¡ú "Please log in. Let me know when ready."
-- NO ¡ú "Click 'Register' on cova.mfa.gov.cn, then log in."
+- YES ? "Please log in. Let me know when ready."
+- NO ? "Click 'Register' on cova.mfa.gov.cn, then log in."
 
 ---
 
@@ -47,14 +50,14 @@ Use this skill when the user:
 
 | Option | Visa Type | Skip to Section |
 |--------|-----------|-----------------|
-| **Tourism/Sightseeing** | L | ¡ú Step 3a |
-| **Business/Trade** | M | ¡ú Step 3b |
-| **Visit Family/Relatives** | Q1/Q2 | ¡ú Step 3c |
-| **Visit Friend** | S2 | ¡ú Step 3d |
-| **Study (>180 days)** | X1 | ¡ú Full form |
-| **Study (<180 days)** | X2 | ¡ú Step 3e |
-| **Work** | Z | ¡ú Full form |
-| **Transit Only** | ¡ú Check Visa-Free | ¡ú Step 3f |
+| **Tourism/Sightseeing** | L | ? Step 3a |
+| **Business/Trade** | M | ? Step 3b |
+| **Visit Family/Relatives** | Q1/Q2 | ? Step 3c |
+| **Visit Friend** | S2 | ? Step 3d |
+| **Study (>180 days)** | X1 | ? Full form |
+| **Study (<180 days)** | X2 | ? Step 3e |
+| **Work** | Z | ? Full form |
+| **Transit Only** | ? Check Visa-Free | ? Step 3f |
 
 ---
 
@@ -64,11 +67,11 @@ Use this skill when the user:
 
 | Duration | Recommended Option |
 |----------|-------------------|
-| **¡Ü 15 days** | Transit Visa-Free (if qualifying) |
-| **¡Ü 30 days** | Single-Entry L Visa |
+| **? 15 days** | Transit Visa-Free (if qualifying) |
+| **? 30 days** | Single-Entry L Visa |
 | **30-90 days** | Single or Double-Entry L Visa |
 
-**If ¡Ü 15 days ¡ú Go to Step 3f for Visa-Free check**
+**If ? 15 days ? Go to Step 3f for Visa-Free check**
 
 ---
 
@@ -78,14 +81,14 @@ Use this skill when the user:
 
 | Duration | Recommended Option |
 |----------|-------------------|
-| **¡Ü 30 days** | Single-Entry M Visa |
+| **? 30 days** | Single-Entry M Visa |
 | **30-90 days** | Double-Entry M Visa |
 | **> 90 days** | Z Visa (Work) |
 
 **Q: Do you have an invitation letter from the Chinese company?**
 
-- YES ¡ú Continue to passport info
-- NO ¡ú "You need an invitation letter for M visa. Ask the Chinese company to provide one."
+- YES ? Continue to passport info
+- NO ? "You need an invitation letter for M visa. Ask the Chinese company to provide one."
 
 ---
 
@@ -93,13 +96,13 @@ Use this skill when the user:
 
 **Q: Are you visiting a Chinese citizen family member?**
 
-- YES ¡ú Q2 Visa (easier requirements)
-- NO ¡ú Visiting foreign national in China ¡ú S2 Visa
+- YES ? Q2 Visa (easier requirements)
+- NO ? Visiting foreign national in China ? S2 Visa
 
 **Q: Will you stay with them?**
 
-- YES ¡ú Q2 (homestay)
-- NO ¡ú Q2 (hotel)
+- YES ? Q2 (homestay)
+- NO ? Q2 (hotel)
 
 ---
 
@@ -107,8 +110,8 @@ Use this skill when the user:
 
 **Q: Does your friend hold a valid Chinese residence permit?**
 
-- YES ¡ú S2 Visa
-- NO ¡ú May need Q2 or tourist visa
+- YES ? S2 Visa
+- NO ? May need Q2 or tourist visa
 
 ---
 
@@ -116,8 +119,8 @@ Use this skill when the user:
 
 **Q: Do you have an admission notice from the Chinese school?**
 
-- YES ¡ú Continue
-- NO ¡ú "You need the school's admission notice for X2 visa"
+- YES ? Continue
+- NO ? "You need the school's admission notice for X2 visa"
 
 ---
 
@@ -139,8 +142,8 @@ Check against: 54 countries for 30-day visa-free, 24 countries for transit visa-
 
 **Q: Are you transiting through China?**
 
-- YES ¡ú **144-hour/72-hour transit visa-free** (if qualifying)
-- NO ¡ú Not eligible for transit visa-free
+- YES ? **144-hour/72-hour transit visa-free** (if qualifying)
+- NO ? Not eligible for transit visa-free
 
 **Q: Which Chinese city will you transit through?**
 
@@ -163,7 +166,7 @@ Must be a different country from origin.
 |-----------|-------------|
 | Nationality | From 54 eligible countries |
 | Transit city | Must be designated city |
-| Duration | ¡Ü 144 hours (6 days) |
+| Duration | ? 144 hours (6 days) |
 | Final destination | Must be different country |
 | No leaving the city zone | Must stay within permit area |
 
@@ -184,10 +187,10 @@ Must be a different country from origin.
 
 **Q: How many days will you stay in China?**
 
-- < 30 days ¡ú Single entry
-- 30-60 days ¡ú Single or double entry
-- 60-90 days ¡ú Double entry recommended
-- > 90 days ¡ú Check visa type (may need Z, X1)
+- < 30 days ? Single entry
+- 30-60 days ? Single or double entry
+- 60-90 days ? Double entry recommended
+- > 90 days ? Check visa type (may need Z, X1)
 
 **Q: How many entries do you need?**
 
@@ -203,8 +206,8 @@ Must be a different country from origin.
 
 **Important:** Must be within 90 days of application date.
 
-- YES ¡ú Date: ___
-- NO ¡ú "Adjust entry date to be within 90 days"
+- YES ? Date: ___
+- NO ? "Adjust entry date to be within 90 days"
 
 **Q: Which port of entry?**
 
@@ -212,12 +215,12 @@ Common options:
 - Beijing Capital (PEK/PKX)
 - Shanghai Pudong (PVG)
 - Guangzhou Baiyun (CAN)
-- Los Angeles ¡ú Usually PVG/PEK
+- Los Angeles ? Usually PVG/PEK
 
 **Q: Will you exit from a different port?**
 
-- YES ¡ú Note both entry and exit
-- NO ¡ú Same port
+- YES ? Note both entry and exit
+- NO ? Same port
 
 ---
 
@@ -238,8 +241,8 @@ Common options:
 Only ask for info not already provided:
 
 1. **Former Chinese citizenship?**
-   - YES ¡ú Additional form section required
-   - NO ¡ú Skip
+   - YES ? Additional form section required
+   - NO ? Skip
 
 2. **Sex:** Male / Female
 
@@ -257,8 +260,8 @@ Only ask for info not already provided:
 2. **Passport expiry date:** ___
 
    **Check:** Expires after [exit date + 6 months]?
-   - YES ¡ú Good
-   - NO ¡ú "Renew passport first"
+   - YES ? Good
+   - NO ? "Renew passport first"
 
 3. **Passport has 2+ blank pages?**
    - YES / NO
@@ -273,28 +276,28 @@ Only ask for info not already provided:
 - < $2,000 / $2,000-$5,000 / $5,000-$10,000 / > $10,000
 
 **Q: Employer is US-based?**
-- YES ¡ú Company name + address
-- NO ¡ú Note employer details
-- Self-employed ¡ú Business name + address
+- YES ? Company name + address
+- NO ? Note employer details
+- Self-employed ? Business name + address
 
 ---
 
 ## Step 10: Health & History (Quick YES/NO)
 
 1. **Any serious health conditions requiring treatment in China?**
-   - YES ¡ú Note (usually OK)
+   - YES ? Note (usually OK)
    - NO
 
 2. **Any drug-related convictions?**
-   - YES ¡ú May affect application
+   - YES ? May affect application
    - NO
 
 3. **Ever denied Chinese visa?**
-   - YES ¡ú Need explanation letter
+   - YES ? Need explanation letter
    - NO
 
 4. **Ever overstayed or deported from any country?**
-   - YES ¡ú Need explanation letter
+   - YES ? Need explanation letter
    - NO
 
 ---
@@ -305,7 +308,7 @@ Only ask for info not already provided:
 
 **Required:**
 - [ ] Passport (6+ months, 2 blank pages)
-- [ ] Photo (354x472px, white bg, ¡Ý40KB)
+- [ ] Photo (354x472px, white bg, ?40KB)
 - [ ] US residence proof (driver's license, utility bill)
 - [ ] Onward ticket (for transit visa-free)
 
@@ -319,7 +322,7 @@ Only ask for info not already provided:
 - [ ] Passport
 - [ ] Photo
 - [ ] US residence proof
-- [ ] **Invitation letter from Chinese company** ¡û Required!
+- [ ] **Invitation letter from Chinese company** ? Required!
 
 **Invitation letter must include:**
 - Applicant's passport info
@@ -391,13 +394,13 @@ Based on earlier answers, skip:
 
 ## Smart Recommendations
 
-### Trip Duration ¡ú Visa Type
+### Trip Duration ? Visa Type
 
 | Stay | Best Option |
 |------|-------------|
-| ¡Ü 15 days transit | 144-hour transit visa-free (if eligible) |
-| ¡Ü 30 days tourism | Single-entry L visa |
-| ¡Ü 60 days business | Single-entry M visa |
+| ? 15 days transit | 144-hour transit visa-free (if eligible) |
+| ? 30 days tourism | Single-entry L visa |
+| ? 60 days business | Single-entry M visa |
 | 30-60 days | Double-entry (safer) |
 | Family visit | Q2 visa (easier than Q1) |
 | Study < 6 months | X2 visa |
