@@ -1,21 +1,21 @@
 # COVA Visa Agent
 
-> AI-powered assistant for U.S. residents applying for Chinese visas via COVA (cova.mfa.gov.cn)
+> Smart Chinese visa assistant - from trip purpose to approved application
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](#)
+[![Version](https://img.shields.io/badge/version-2.1.0-green.svg)](#)
 
 ## Overview
 
-COVA Visa Agent transforms the Chinese visa application process into a simple conversation. The AI guides you through quick YES/NO questions, validates your information, and helps fill the COVA form step-by-step.
+COVA Visa Agent starts from YOUR trip purpose and recommends the fastest path - whether that's a visa or transit visa-free. No wasted time filling forms you don't need.
 
-### Features
+### Smart Features
 
-- Conversational YES/NO interview
-- Smart validation (passport, 90-day rule)
-- Personalized document checklist
-- Step-by-step form filling
-- Risk assessment
+- **Purpose-first**: We start with "why are you going?" not "fill this form"
+- **Transit check**: 144-hour visa-free may save you from applying entirely
+- **Skip unnecessary**: L visa? No invitation letter needed
+- **YES/NO only**: Quick questions, no open-ended typing
+- **Smart recommendations**: Best visa type based on your stay duration
 
 ---
 
@@ -23,13 +23,11 @@ COVA Visa Agent transforms the Chinese visa application process into a simple co
 
 ### Prerequisites
 
-- Valid passport (6+ months validity)
+- Valid passport (6+ months)
 - Chrome or Edge browser
-- Know your travel dates
+- Know your trip purpose and dates
 
 ### Installation
-
-Place the `cova-visa-agent` folder into your AI agent's skills directory:
 
 | AI Agent | Skills Directory |
 |----------|-----------------|
@@ -38,71 +36,128 @@ Place the `cova-visa-agent` folder into your AI agent's skills directory:
 
 ### Usage
 
-Start a new conversation and mention:
-
-- "Chinese visa"
-- "COVA form"
-- "????"
+Say: "I want to apply for a Chinese visa"
 
 ---
 
 ## How It Works
 
-**Step 1: Account** --> **Step 2: Visa Type** --> **Step 3: Personal Info**
+### Step 1: Trip Purpose First
 
-Log in or register --> Select L/M/Q1/Q2/F/Z --> YES/NO questions
+Tell us WHY you're going:
 
-**Step 4: Travel** --> **Step 5: Checklist** --> **Step 6: Form Fill**
+| Purpose | Visa Type |
+|---------|-----------|
+| Tourism | L Visa |
+| Business | M Visa |
+| Visit Family | Q1/Q2 Visa |
+| Visit Friend | S2 Visa |
+| Transit | Check Visa-Free |
+| Study/Work | X1/Z Visa |
 
-Dates & accommodation --> Required documents --> Browser step-by-step
+### Step 2: Duration Check
+
+**You might not need a visa at all!**
+
+| Duration | Country | Option |
+|----------|---------|--------|
+| ¡Ü 15 days | 54 countries | 144-hour Transit Visa-Free |
+| Any | US/Canada/Japan... | 30-day Tourist Visa (L) |
+| Business | China | M Visa |
+
+### Step 3: Smart Form
+
+Only shows sections YOU need:
+- L Visa ¡ú No invitation letter section
+- Transit Visa-Free ¡ú No COVA form needed!
+- Already answered ¡ú Skip that question
 
 ---
 
-## Supported Visa Types
+## Do You Even Need a Visa?
 
-| Code | Name | Requirement |
-|------|------|-------------|
-| **L** | Tourism | No invitation needed |
-| **M** | Business | Invitation letter |
-| **Q1/Q2** | Family | Invitation + relationship proof |
-| **S1/S2** | Private | Invitation |
-| **F** | Exchange | Invitation letter |
+### 144-Hour Transit Visa-Free
+
+**You may NOT need to fill any form if:**
+
+| Requirement | Details |
+|-------------|---------|
+| Nationality | From 54 eligible countries (US ?) |
+| Transit | Must be through designated city |
+| Duration | ¡Ü 144 hours (6 days) |
+| Destination | Must be different country |
+
+**Eligible cities:** Beijing, Shanghai, Guangzhou, Shenzhen, Chengdu, Xi'an, Chongqing...
+
+**Required only:**
+- Passport (6+ months)
+- Onward ticket to 3rd country
+- No COVA form needed!
+
+---
+
+## Visa Types
+
+| Code | Name | Key Requirement |
+|------|------|-----------------|
+| **L** | Tourism | No invitation needed ? |
+| **M** | Business | Invitation letter required |
+| **Q2** | Family Visit | Invitation + Relationship |
+| **S2** | Friend Visit | Invitation + ID |
+| **X2** | Short Study | School admission notice |
 | **Z** | Work | Work permit |
 
 ---
 
-## Document Checklist
+## Document Checklist by Visa Type
 
-**All Visas:**
+### L Visa (Tourism) - Easiest!
+
 - [ ] Passport (6+ months, 2 blank pages)
-- [ ] Photo (354x472px, white bg, ?40KB)
+- [ ] Photo (354x472px, white bg)
 - [ ] US residence proof
 
-**L Visa:** Done!
-
-**M Visa:** + Invitation letter
-
-**Q1/Q2:** + Invitation + Relationship proof
+**No invitation letter needed!**
 
 ---
 
-## Key Rules
+### M Visa (Business)
+
+- [ ] Passport
+- [ ] Photo
+- [ ] US residence proof
+- [ ] **Invitation letter from Chinese company**
+
+---
+
+### Transit Visa-Free
+
+- [ ] Passport
+- [ ] Onward ticket (different destination)
+- [ ] Visa for final destination (if needed)
+
+**No form, no photo, no fee!**
+
+---
+
+## Important Rules
 
 | Rule | Requirement |
 |------|-------------|
 | Passport | 6+ months beyond exit |
 | Entry date | Within 90 days |
-| Photo | 354x472px, ?40KB |
-| Blank pages | 2+ required |
+| L Visa | No invitation needed ? |
+| Transit | Must be different destination |
 
 ---
 
-## Data Privacy
+## Privacy & Safety
 
 - No data storage
 - Session only
-- You review every field
+- You review everything
 - Only you submit
+- Does NOT guarantee approval
 
 ---
 
